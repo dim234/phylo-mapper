@@ -1,4 +1,4 @@
-# Builds dist\PhyloMapper.exe in a local virtual environment.
+# Builds dist\PhyloMapper\ (the app folder) and dist\PhyloMapper-windows.zip in a local virtual environment.
 # Usage (from the project folder):  powershell -ExecutionPolicy Bypass -File .\build.ps1
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
@@ -17,4 +17,14 @@ if ($LASTEXITCODE -ne 0) { throw "Tests failed, not building" }
 & $python -m PyInstaller phylo-mapper.spec --noconfirm --clean
 if ($LASTEXITCODE -ne 0) { throw "PyInstaller build failed" }
 
-Write-Host "Built $(Resolve-Path dist\PhyloMapper.exe)"
+# The license files have to ship with the app, mainly for Qt (LGPLv3).
+$app = "dist\PhyloMapper"
+Copy-Item LICENSE, THIRD_PARTY_LICENSES.md $app
+Copy-Item licenses $app -Recurse -Force
+
+$zip = "dist\PhyloMapper-windows.zip"
+if (Test-Path $zip) { Remove-Item $zip }
+Compress-Archive -Path $app -DestinationPath $zip
+
+Write-Host "Built $(Resolve-Path $app)\PhyloMapper.exe"
+Write-Host "Zipped $(Resolve-Path $zip)"

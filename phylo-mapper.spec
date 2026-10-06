@@ -1,4 +1,4 @@
-# PyInstaller config. Builds dist/PhyloMapper.exe as a single file with no console window.
+# PyInstaller config. Builds dist/PhyloMapper/ with PhyloMapper.exe and its libraries, no console window.
 # Build with: .\build.ps1   (or: python -m PyInstaller phylo-mapper.spec --noconfirm)
 
 # Qt modules the app never uses. Leaving them out keeps the exe smaller.
@@ -30,15 +30,24 @@ a = Analysis(
 )
 pyz = PYZ(a.pure)
 
+# One-folder build: the Qt DLLs stay as separate files next to the exe so users
+# can swap in their own Qt build, which the LGPL requires.
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.datas,
     [],
+    exclude_binaries=True,
     name="PhyloMapper",
     debug=False,
     strip=False,
     upx=False,
     console=False,
+)
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.datas,
+    strip=False,
+    upx=False,
+    name="PhyloMapper",
 )

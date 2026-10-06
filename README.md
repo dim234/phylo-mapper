@@ -9,9 +9,10 @@ free for anyone to use, change, or share (MIT license, see `LICENSE`).
 
 ## Getting it
 
-The easiest way on Windows is the ready-made exe. Download `PhyloMapper.exe`
-from the [releases page](../../releases/latest) and double-click it. You don't
-need Python installed.
+The easiest way on Windows is the ready-made app. Download
+`PhyloMapper-windows.zip` from the [releases page](../../releases/latest),
+unzip it, and run `PhyloMapper.exe` inside the folder. Keep the exe together
+with the other files in that folder. You don't need Python installed.
 
 Windows will probably show a "Windows protected your PC" warning the first time,
 because the exe isn't signed. Click "More info" and then "Run anyway".
@@ -52,7 +53,14 @@ Run the tests with `.venv\Scripts\python -m unittest`.
 powershell -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
-This sets up `.venv`, runs the tests, and puts the result in `dist\PhyloMapper.exe`.
+This sets up `.venv`, runs the tests, builds the app into `dist\PhyloMapper\`,
+and zips it as `dist\PhyloMapper-windows.zip`.
+
+## Licenses
+
+My code is MIT. The Windows download also includes Qt for Python (PySide6),
+which is under the LGPLv3, plus a few other libraries. See
+`THIRD_PARTY_LICENSES.md` and the `licenses` folder for details.
 
 ## How the distances work
 
