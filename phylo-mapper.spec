@@ -1,7 +1,7 @@
-# PyInstaller build config: produces dist/PhyloMapper.exe (single file, no console).
+# PyInstaller config. Builds dist/PhyloMapper.exe as a single file with no console window.
 # Build with: .\build.ps1   (or: python -m PyInstaller phylo-mapper.spec --noconfirm)
 
-# Qt modules the app never imports; excluding them keeps the executable small.
+# Qt modules the app never uses. Leaving them out keeps the exe smaller.
 unused_qt = [
     "PySide6.Qt3DAnimation", "PySide6.Qt3DCore", "PySide6.Qt3DExtras",
     "PySide6.Qt3DInput", "PySide6.Qt3DLogic", "PySide6.Qt3DRender",

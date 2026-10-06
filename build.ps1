@@ -12,7 +12,7 @@ $python = ".venv\Scripts\python.exe"
 if ($LASTEXITCODE -ne 0) { throw "Dependency install failed" }
 
 & $python -m unittest
-if ($LASTEXITCODE -ne 0) { throw "Tests failed; not building" }
+if ($LASTEXITCODE -ne 0) { throw "Tests failed, not building" }
 
 & $python -m PyInstaller phylo-mapper.spec --noconfirm --clean
 if ($LASTEXITCODE -ne 0) { throw "PyInstaller build failed" }

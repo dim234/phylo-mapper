@@ -519,7 +519,7 @@ class PhyloMapperWindow(QMainWindow):
             self.tree_view.set_tree(None)
             self.tree_message.setText(str(error))
             self.tree_stack.setCurrentWidget(self.tree_message)
-            self.status_stat.value_label.setText("Distance matrix ready; no tree")
+            self.status_stat.value_label.setText("Distance matrix ready, no tree")
         else:
             self.tree_view.set_tree(self.tree)
             self.tree_stack.setCurrentIndex(0)

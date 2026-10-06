@@ -84,7 +84,7 @@ def read_fasta(path: Path) -> Dict[str, str]:
 
 
 def calculate_distance(seq1: str, seq2: str) -> Optional[int]:
-    """Count differences at unambiguous nucleotide sites; return None if none exist."""
+    """Count differences at unambiguous nucleotide sites. Returns None if there are none."""
     if len(seq1) != len(seq2):
         raise ValueError(
             "Sequences must have equal lengths to calculate distance "
@@ -150,7 +150,7 @@ def build_distance_matrix(
 
 @dataclass
 class TreeNode:
-    """A rooted tree node; ``branch_length`` is the distance to its parent."""
+    """A rooted tree node. ``branch_length`` is the distance to its parent."""
 
     name: Optional[str] = None
     children: List["TreeNode"] = field(default_factory=list)
@@ -285,7 +285,7 @@ def build_tree(matrix: pd.DataFrame, method: str = "nj") -> TreeNode:
     if method == "upgma":
         return upgma(matrix)
     raise ValueError(
-        "Unknown tree method {!r}; expected one of {}".format(
+        "Unknown tree method {!r}, expected one of {}".format(
             method, ", ".join(TREE_METHODS)
         )
     )
