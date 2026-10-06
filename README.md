@@ -1,4 +1,4 @@
-# PhyloMapper
+# SeqGrove
 
 A small desktop app for looking at how related some DNA sequences are. You give
 it an aligned FASTA file, it counts the differences between every pair of
@@ -10,8 +10,8 @@ free for anyone to use, change, or share (MIT license, see `LICENSE`).
 ## Getting it
 
 The easiest way on Windows is the ready-made app. Download
-`PhyloMapper-windows.zip` from the [releases page](../../releases/latest),
-unzip it, and run `PhyloMapper.exe` inside the folder. Keep the exe together
+`SeqGrove-windows.zip` from the [releases page](../../releases/latest),
+unzip it, and run `SeqGrove.exe` inside the folder. Keep the exe together
 with the other files in that folder. You don't need Python installed.
 
 Windows will probably show a "Windows protected your PC" warning the first time,
@@ -53,8 +53,8 @@ Run the tests with `.venv\Scripts\python -m unittest`.
 powershell -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
-This sets up `.venv`, runs the tests, builds the app into `dist\PhyloMapper\`,
-and zips it as `dist\PhyloMapper-windows.zip`.
+This sets up `.venv`, runs the tests, builds the app into `dist\SeqGrove\`,
+and zips it as `dist\SeqGrove-windows.zip`.
 
 ## Licenses
 

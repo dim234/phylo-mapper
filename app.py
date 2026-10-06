@@ -254,10 +254,10 @@ class TreeView(QWidget):
         )
 
 
-class PhyloMapperWindow(QMainWindow):
+class SeqGroveWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
-        self.setWindowTitle("PhyloMapper")
+        self.setWindowTitle("SeqGrove")
         self.resize(1120, 760)
         self.setMinimumSize(760, 560)
 
@@ -277,7 +277,7 @@ class PhyloMapperWindow(QMainWindow):
 
         header = QHBoxLayout()
         brand = QVBoxLayout()
-        logo = QLabel("PHYLOMAPPER")
+        logo = QLabel("SEQGROVE")
         logo.setObjectName("brand")
         title = QLabel("Sequence distance explorer")
         title.setObjectName("title")
@@ -590,7 +590,7 @@ class PhyloMapperWindow(QMainWindow):
 
 def main() -> int:
     app = QApplication(sys.argv)
-    window = PhyloMapperWindow()
+    window = SeqGroveWindow()
     window.show()
     return app.exec()
 

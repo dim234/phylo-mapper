@@ -1,5 +1,5 @@
-# PyInstaller config. Builds dist/PhyloMapper/ with PhyloMapper.exe and its libraries, no console window.
-# Build with: .\build.ps1   (or: python -m PyInstaller phylo-mapper.spec --noconfirm)
+# PyInstaller config. Builds dist/SeqGrove/ with SeqGrove.exe and its libraries, no console window.
+# Build with: .\build.ps1   (or: python -m PyInstaller seqgrove.spec --noconfirm)
 
 # Qt modules the app never uses. Leaving them out keeps the exe smaller.
 unused_qt = [
@@ -37,7 +37,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name="PhyloMapper",
+    name="SeqGrove",
     debug=False,
     strip=False,
     upx=False,
@@ -49,5 +49,5 @@ coll = COLLECT(
     a.datas,
     strip=False,
     upx=False,
-    name="PhyloMapper",
+    name="SeqGrove",
 )

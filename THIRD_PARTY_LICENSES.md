@@ -1,6 +1,6 @@
 # Third-party licenses
 
-PhyloMapper's own code is under the MIT license (see `LICENSE`). The Windows
+SeqGrove's own code is under the MIT license (see `LICENSE`). The Windows
 download also includes the libraries below. Their full license texts are in
 the `licenses` folder.
 
@@ -19,7 +19,7 @@ that allows it to be used in programs under any license.
 
 ## About Qt (LGPLv3)
 
-PhyloMapper uses Qt for Python and Qt under the GNU Lesser General Public
+SeqGrove uses Qt for Python and Qt under the GNU Lesser General Public
 License version 3. The texts are in `licenses/LGPL-3.0.txt` and
 `licenses/GPL-3.0.txt` (the LGPL builds on the GPL).
 
