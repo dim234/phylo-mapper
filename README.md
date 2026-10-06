@@ -6,7 +6,7 @@ mismatch distances, and plots a phylogenetic tree (UPGMA or neighbor joining).
 ## Download
 
 Grab `PhyloMapper.exe` from the [latest release](../../releases/latest) and run
-it — no Python install needed (Windows 64-bit).
+it, no Python install needed (Windows 64-bit).
 
 ## Run from source
 

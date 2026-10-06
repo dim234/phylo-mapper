@@ -10,9 +10,7 @@ __pycache__/
 build/
 dist/
 
-# Local tooling and secrets
-.claude/settings.local.json
-CLAUDE.local.md
+# Local secrets
 .env
 .env.*
 
